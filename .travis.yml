@@ -1,0 +1,14 @@
+language: generic
+
+# for permissions
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  # we tag the image so we can reference it
+  - docker build -t ceheiss/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true ceheiss/docker-react npm run test
