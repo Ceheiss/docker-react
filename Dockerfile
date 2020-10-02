@@ -9,6 +9,7 @@ RUN npm run build
 # /app/build <-- that is the directory we care about
 
 FROM nginx
+EXPOSE 80
 # I want to copy something from another phase
 COPY --from=builder /app/build /usr/share/nginx/html
 # Nginx is going to start automatically
