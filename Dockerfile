@@ -1,6 +1,6 @@
 # we tag it as our builder phase
-FROM node:alpine as builder
-WORKDIR '/app/'
+FROM node:alpine
+WORKDIR '/app'
 COPY package*.json ./
 RUN npm install
 # we are not changing our code anymore, so we can make a direct copy
